@@ -2,3 +2,4 @@ node_modules
 run.sh
 .env
 wrangler.toml
+_*.pem
