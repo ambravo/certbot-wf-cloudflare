@@ -1,0 +1,13 @@
+name = "XXXXXXX"
+main = "src/index.js"
+compatibility_date = "2023-02-26"
+usage_model = "bundled"
+env = { }
+kv_namespaces = [
+  { binding = "XXXX", id = "XXXXX", preview_id = "XXXXX" }
+]
+
+
+[triggers]
+crons = [ ]
+
