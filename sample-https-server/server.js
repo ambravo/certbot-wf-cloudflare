@@ -2,8 +2,10 @@ const https = require('https');
 const fs = require('fs');
 
 const options = {
-  key: fs.readFileSync('_privkey.pem'), //You download this file from certs.a0.gg
-  cert: fs.readFileSync('_fullchain.pem') //You download this file from certs.a0.gg
+  // The following (updated) files are to be downloaded from certs.a0.gg.
+  // The key and cert provided in this repo might be expired
+  key: fs.readFileSync('_privkey.pem'), 
+  cert: fs.readFileSync('_fullchain.pem') 
 };
 
 const server = https.createServer(options, (req, res) => {
@@ -13,5 +15,5 @@ const server = https.createServer(options, (req, res) => {
 });
 
 server.listen(3443, () => {
-  console.log('Server listening on port 3443');
+  console.log('Server listening on port https://local.a0.gg:3443');
 });
