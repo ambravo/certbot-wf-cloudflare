@@ -1,0 +1,24 @@
+name: Refresh Certificates in Cloudflare KV
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Generate certificate
+      uses: docker://abravoayala/a0_cert-generator-image:latest
+      env:
+        DOMAIN: ${{ secrets.DOMAIN }}
+        CF_DNS_TOKEN: ${{ secrets.CF_DNS_TOKEN }}
+        CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        CF_KV_TOKEN: ${{ secrets.CF_KV_TOKEN }}
+        CF_KV_NAMESPACE: ${{ secrets.CF_KV_NAMESPACE }}
+        CERTBOT_TEST_MODE: ${{ secrets.CERTBOT_TEST_MODE }}
+        EMAIL: ${{ secrets.EMAIL }}
+      with:
+        entrypoint: /entrypoint.sh
