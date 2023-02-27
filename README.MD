@@ -46,6 +46,6 @@ server.listen(3443, () => {
 ## About this repo
 
 This repo contains:
-- The docker image used by a Github action that creates and refresh the certificates
-- A sample https app that uses
-- A Cloudflare worker code that hosts the updated cerficates using KVs
+- The docker file that generates an image used by a Github action that creates and refresh the certificates
+- The code of a Cloudflare's worker that hosts the updated cerficates using KVs
+- A sample https app that uses generated certs
