@@ -2,7 +2,7 @@
   "name": "a0gg-certificates",
   "version": "0.0.0",
   "devDependencies": {
-    "wrangler": "2.11.1"
+    "wrangler": "3.1.1"
   },
   "private": true,
   "scripts": {
