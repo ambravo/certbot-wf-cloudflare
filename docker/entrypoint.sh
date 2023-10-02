@@ -38,6 +38,9 @@ else
   TEST_FLAG=""
 fi
 
+#force new certs everytime
+REFRESH_FLAG=""
+
 certbot certonly \
   --dns-cloudflare \
   --dns-cloudflare-credentials /tmp/cloudflare.ini \
